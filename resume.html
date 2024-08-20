@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        h1{
+            text-align: center;
+            font-size: 40px;
+        }
+        img{
+            display: flex;
+            justify-content: right;
+        }
+        .switch{
+            text-align: right;
+
+        }
+        .inner-switch{
+            text-align: center;
+        }
+        .switch{
+            align-self: flex-end;
+            margin: 0.9375rem;
+        }
+        .inner-switch{
+            display: inline-block;
+            cursor: pointer;
+            border: 1px solid #555;
+            border-radius: 1.25rem;
+            width: 3.125rem;
+            text-align: center;
+            font-size: 1rem;
+            padding: 0.1875rem;
+        }
+        .dark,
+        .dark * {
+            background-color: #222;
+            color: #e6e6e6;
+            border-color: #e6e6e6;
+        }
+        :root{
+            --main-color:#ecf0f1;
+            --point-color:#555;
+            --size:5px;
+        }
+        body {
+  padding: 25px;
+  background-color: white;
+  color: black;
+  font-size: 25px;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="myFunction()">Dark mode</button>
+    
+    <h1>My Resume </h1>
+    <a href="./index.html">Back to homepage</a>
+    <img src="image/rusum-man.jpg" width="50%">
+    <script>
+        $(".inner-switch").on("click",
+            function(){
+                if( $("body").hasClass("dark"))
+            {
+                $("body").removeClass("dark");
+                $(".inner-switch").text("🔆");
+            }
+            else{
+                $("body").addClass("dark");
+                $(".inner-switch").text("🌖");
+            }
+            }
+        );
+
+        function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+    </script>
+</body>
+</html>
